@@ -1,0 +1,53 @@
+<div class="header clearfix">
+	<span class="head icon">|</span><span class="head" >用户组编辑</span>
+	<div class="btnHeader head">
+        <button class="btn btn-primary" (click)="detialTo()">添加成员</button>
+         <button class="btn btn-primary" (click)="returnTo()">返回</button>
+    </div>
+</div>
+<div class="tableList " >
+	<table class="table table-bordered table-hover " >
+		<thead >
+			<tr>
+				<td class="info shortTxt"><input #allcheck type="checkbox" name="allCheck"  (change)="checkAll(allcheck)">操作</td>
+				<td class="info" >姓名</td>
+				<td class="info middleTxt">公司</td>
+				<td class="info" >部门</td>
+				<td class="info ">职位</td>
+				<td class="info ">联系电话</td>
+			</tr>
+		</thead>
+			<tbody  id="list"  *ngFor="let gp of group">
+			<tr #userList class="Userlist">
+				<td ><a (click)="changeGp(changeGroup,gp)">删除</a></td>
+				<td>{{gp.userDomain.userName}}</td>
+				<td>{{gp.userDomain.organizationFullName}}</td>
+				<td>{{gp.userDomain.department}}</td>
+				<td>{{gp.userDomain.position}}</td>
+				<td>{{gp.userDomain.contactPhone}}</td>
+				<!-- <td class="table-hover" ><input  *ngIf="0" type="checkbox" #listState name="user" (change)="changeState(listState,userList)" >{{userMsg.registPhone}}</td>
+				<td class="table-hover" #username>{{userMsg.userName}}</td>
+				<td class="table-hover middleTxt" #userMsgName><div [tooltip]="userMsg.company" class="td">{{userMsg.company}}</div></td>
+				<td class="table-hover">{{userMsg.applyTime}}</td> -->
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- pagination -->
+<div class="row pagerow">
+	<div class="pageshowleft">每页显示
+		<select #selectPage name="" id="msgNum" (change)="sizeData(selectPage.value,userList)" [(ngModel)]="itemsPerPage">
+			<option #optionPage  *ngFor="let msgNumber of msgNumbers" value={{msgNumber.Number}}>{{msgNumber.Number}}</option>
+		</select>
+		条数据
+	</div>
+	<div class="pageshowmodle">
+		<span>{{currentPage}} / {{totalPages}}</span>页
+		<span>{{totalItems}}条数据</span>
+	</div>
+
+	<div class="pagefen">
+		<pagination  [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [maxSize]="maxSize" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [boundaryLinks]="true" (pageChanged)='pageChanged($event)' (numPages)='pageNumChange($event)' class="pagination-sm"></pagination>
+	</div>
+</div>

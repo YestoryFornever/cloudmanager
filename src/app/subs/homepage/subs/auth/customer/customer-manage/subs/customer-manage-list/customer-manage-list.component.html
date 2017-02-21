@@ -1,0 +1,54 @@
+<div class="mian">
+	<div class="header clearfix">
+		<span class="head icon">|</span><span class="head" >客户经理列表</span>
+	</div>
+</div>
+
+<!-- table -->
+	<div class="tableList "  >
+		<div class = "loading" [ngClass]="setLoadClasses()" [ngStyle]="{'height': height }">
+		 <div class="loader">
+			<div class="loader-inner">
+				<div class="loader-line-wrap">
+					<div class="loader-line"></div>
+				</div>
+				<div class="loader-line-wrap">
+					<div class="loader-line"></div>
+				</div>
+				<div class="loader-line-wrap">
+					<div class="loader-line"></div>
+				</div>
+				<div class="loader-line-wrap">
+					<div class="loader-line"></div>
+				</div>
+				<div class="loader-line-wrap">
+					<div class="loader-line"></div>
+				</div>
+			</div>
+		 </div>
+		</div>
+		<table class="table table-bordered table-hover " [ngClass]="setListClasses()">
+
+			<thead >
+				<tr>
+					<td class="info">操作</td>
+					<td class="info middleTxt">客户经理账号</td>
+					<td class="info middleTxt">客户经理姓名</td>					
+					<td class="info shortTxt">管理机构数</td>
+					<td class="info shortTxt">管理联系人数</td>
+					<td class="info ">最近拜访时间</td>
+				</tr>
+			</thead>
+			<tbody  id="list" *ngFor="let customer of customerList"  >
+				<tr #userList   [ngStyle]="{'background-color': color }" class="Userlist">
+					<td><a (click)="toChange(customer.employmentId,customer.loginName,customer.userName )">查看已分配机构</a></td>
+					 
+					<td class="table-hover">{{customer.loginName}}</td>
+					<td class="table-hover">{{customer.userName }}</td>
+					<td class="table-hover">{{customer.orgNumber }}</td>
+					<td class="table-hover">{{customer.contactNumber }}</td>
+					<td class="table-hover">{{customer.visitTime }}</td> 
+				</tr>
+			</tbody>
+		</table>
+	</div>

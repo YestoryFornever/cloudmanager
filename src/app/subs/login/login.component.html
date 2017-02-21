@@ -1,0 +1,18 @@
+ <main>
+	<div class="logWindow">
+		<div class="logo">
+			<img src="../../../../public/images/1.gif">
+		</div>
+		<div class="forms">
+			<form>
+			<input class="formset" type="text" #username name="username" placeholder="请输入账号">
+			<input class="formset" type="password" #password name="password" placeholder="请输入密码">
+			<span class="txt" style="float: left"><input  type="checkbox" name=""> 保存密码</span><span class="miss txt" (click)="missPassword()" style="color:blue ;cursor: pointer">忘记密码？</span>
+			<input  type="button" class="btn btn-primary btn-lg " name=""  value="登录"  (click)="login(username,password)">
+			
+			<span class="txt"><input  type="checkbox" name=""> 我同意并已阅读《<span>服务协议</span>》</span>
+		</form>
+		</div>
+			<a routerLink="/homepage" routerLinkActive="active" style="color:#fff;" class="door">AfcatIN</a>
+	</div>
+</main>

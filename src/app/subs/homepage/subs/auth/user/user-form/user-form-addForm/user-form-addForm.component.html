@@ -1,0 +1,36 @@
+<div class="header clearfix">
+	<span class="head icon">|</span><span class="head" >编辑VIP服务</span>
+	<div class="btnHeader head">
+        <button class="btn btn-primary" (click)="returnTo()">返回</button>
+         <button class="btn btn-primary" >添加</button>
+    </div>
+</div>
+<div class="tableList " >
+	<div>当前vip服务名称：xxx</div>
+	<table class="table table-bordered table-hover " >
+		<thead >
+			<tr>
+				<td class="info shortTxt"><input #allcheck type="checkbox" name="allCheck"  (change)="checkAll(allcheck)">姓名</td>
+				<td class="info middleTxt">公司</td>
+				<td class="info" >部门</td>
+				<td class="info ">职位</td>
+				<td class="info middleTxt">注册手机号</td>
+				<td class="info ">联系电话</td>
+			</tr>
+		</thead>
+		<tbody  id="list">
+			<tr #userList class="Userlist">
+				<td>刘伟</td>
+				<td>债金所</td>
+				<td>资产管理总部</td>
+				<td>业务员</td>
+				<td>15823212341</td>
+				<td>15823212341</td>
+				<!-- <td class="table-hover" ><input  *ngIf="0" type="checkbox" #listState name="user" (change)="changeState(listState,userList)" >{{userMsg.registPhone}}</td>
+				<td class="table-hover" #username>{{userMsg.userName}}</td>
+				<td class="table-hover middleTxt" #userMsgName><div [tooltip]="userMsg.company" class="td">{{userMsg.company}}</div></td>
+				<td class="table-hover">{{userMsg.applyTime}}</td> -->
+			</tr>
+		</tbody>
+	</table>
+</div>	

@@ -1,0 +1,97 @@
+<div class="header clearfix">
+    <span class="head icon">|</span><span class="head">金币发放记录</span>
+    <div class="btnHeader head">
+        <button class=" btn btn-primary sub" (click)='alertShow(orderByStores)'>发放金币</button>
+    </div>
+</div>
+<!-- lists -->
+<div class="tableList ">
+    <table class="table table-bordered table-hover ">
+        <thead>
+            <tr>
+                <td class="info longTxt">注册手机号</td>
+                <td class="info longTxt">用户姓名</td>
+                <td class="info longTxt">发放金币数量</td>
+                <td class="info longTxt">发放用户</td>
+                <td class="info longTxt">发放时间</td>
+                <!-- <td class="info longTxt">通知标题</td> -->
+                <td class="info longTxt">通知正文</td>
+            </tr>
+        </thead>
+        <tbody *ngFor="let list of detailLists">
+            <tr>
+                <td>{{list.phoneNum }}</td>
+                <td>{{list.userName}}</td>
+                <td>{{list.coinNumber  | numAddComma2}}</td>
+                <td>{{list.createUserName}}</td>
+                <td>{{list.createTime}}</td>
+                <!-- <td>{{list.messageTitle}}</td> -->
+                <td>{{list.messageBody}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<!-- 分页 -->
+<div class="row pagerow">
+    <div class="pageshowleft">每页显示
+        <select #selectPage name="" id="msgNum" (change)="sizeData(selectPage.value,userList)">
+            <option #optionPage *ngFor="let msgNumber of msgNumbers" value={{msgNumber.Number}}>{{msgNumber.Number}}</option>
+        </select>
+        条数据
+    </div>
+    <div class="pageshowmodle">
+        <span>{{currentPage}} / {{totalPages}}</span>页
+        <span>{{totalItems}}条数据</span>
+    </div>
+    <div class="pagefen">
+        <pagination [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [maxSize]="maxSize" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [boundaryLinks]="true" (pageChanged)='pageChanged($event,allcheck)' (numPages)='pageNumChange($event)' class="pagination-sm"></pagination>
+    </div>
+</div>
+<!-- 发放金币弹窗 -->
+<div bsModal #orderByStores="bs-modal" class="modal fade " tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog  myModal ">
+        <div class="modal-content ">
+            <div class="modal-header">
+                <button type="button" class="close" (click)="orderByStores.hide()" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">发放金币</h4>
+            </div>
+            <div class="modal-body ">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 marTB">
+                    <span class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><i class="red">*</i>发放用户</span>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 form-inline form-group">
+                        <label for="phone" style="display:none"></label>
+                        <input class="pp form-control" [(ngModel)]="phoneObj.phone" required type="text" minlength='1' maxlength="11" id="phone" name="phone" placeholder="请输入手机号">
+                        <button class="PiPei btn btn-mint PiPei" (click)="getPhoneMsg()">匹配</button>
+                    </div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 marTB">
+                    <span class="col-lg-4 col-md-4 col-sm-4 col-xs-4">用户信息</span>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8" *ngIf="userInfo.data">{{userInfo.data}}</div>
+                </div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 marTB">
+                    <span class="col-lg-4 col-md-4 col-sm-4 col-xs-4"><i class="red">*</i>发放金币数量</span>
+                    <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+                        <input class="pp form-control" (keyup)='changeNum()' [(ngModel)]="sendInfo.coinNumber" required type="test" min="0" placeholder="请输入金币数量">
+                    </div>
+                </div>
+                <div class=" col-xs-12 marTB">
+                    <span class=" col-xs-4"><i class="red">*</i>通知正文</span>
+                    <span class=" col-xs-8" style="text-align: left;color:#666">通知正文会作为‘系统消息’发送给用户</span>
+                </div>
+                <div class=" col-xs-12 marTB">
+                    <div class=" col-xs-8 pull-right">
+                        <input class="pp form-control " required [(ngModel)]="sendInfo.messageBody" placeholder="请输入内容">
+                    </div>
+                </div>
+                <div style="clear:both"></div>
+                <div class="btnstyle myBtnStyle">
+                    <button type="button" [attr.disabled]='disabledBtn  ? null : true ' class="btn btn-primary btnhoverju pull-right marR20" (click)="sendGolds(orderByStores)">提交</button>
+                    <button type="button" class="btn btn-default btnhoverlan pull-right marR20" (click)="unSubmit(orderByStores)">取消</button>
+                    <div style="clear:both"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

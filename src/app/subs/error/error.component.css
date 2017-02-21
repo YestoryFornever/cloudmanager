@@ -1,0 +1,26 @@
+div#main{
+	width:300px;
+	height:440px;
+	line-height:100px;
+	vertical-align: middle;
+	position:absolute;
+	top:50%;
+	left:50%;
+	margin-top:-220px;
+	margin-left:-170px;
+}
+#icon{
+	margin:0 auto;
+	color:#b52e31;
+	font-size:60px;
+	text-align:center;
+}
+#tips{
+	text-align: center;
+	margin: 0 auto;
+	font-size: 32px;
+}
+button{
+	display:block;
+	margin:0 auto;
+}

@@ -1,0 +1,75 @@
+<div class="header clearfix">
+	<span class="head icon">|</span><span class="head" >VIP服务详情</span>
+	<div class="btnHeader head">
+		<button class="btn btn-primary" >用户推荐</button>
+		<button class="btn btn-primary" (click)="addTo()">增加组</button>
+		<button class="btn btn-primary" >删除组</button>
+        <button class="btn btn-primary" (click)="returnTo()">返回</button>
+    </div>
+</div>
+
+<div class="newsMsgOther">
+	<div (click)="$event.preventDefault()">
+		<tabset [justified]="false">
+			<tab (select)="get($event)" heading="接收用户组">
+				<div class="tableList "   [ngStyle]="{'height': height }">
+					<table class="table table-bordered table-hover ">
+						<thead >
+							<tr>
+								<td class="info">服务名称</td>
+								<td class="info ">服务类型</td>	
+								<td class="info">备注</td>
+								<td class="info ">创建日期</td>			
+							</tr>
+						</thead>
+						<tbody *ngFor="let userMsg of ListView">
+							<tr class="Userlist">
+								<td class="table-hover">{{userMsg.user_name}}</td>
+								<td class="table-hover">{{userMsg.view_time}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tab>
+			<tab (select)="get($event)" heading="推荐用户组">
+				<div class="tableList "   [ngStyle]="{'height': height }">
+					<table class="table table-bordered table-hover ">
+						<thead >
+							<tr>
+								<td class="info">服务名称</td>
+								<td class="info ">服务类型</td>	
+								<td class="info">备注</td>
+								<td class="info ">创建日期</td>			
+							</tr>
+						</thead>
+						<tbody   *ngFor="let userMsg of ListLike">
+							<tr class="Userlist">
+								<td class="table-hover">{{userMsg.user_name}}</td>
+								<td class="table-hover">{{userMsg.like_time}}</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</tab>
+		</tabset>
+	</div>
+</div>
+
+
+<!-- pagination -->
+<div class="row pagerow">
+	<div class="pageshowleft">每页显示
+		<select #selectPage name="" id="msgNum" (change)="sizeData(selectPage.value,userList)" [(ngModel)]="itemsPerPage">
+			<option #optionPage  *ngFor="let msgNumber of msgNumbers" value={{msgNumber.Number}}>{{msgNumber.Number}}</option>
+		</select>
+		条数据
+	</div>
+	<div class="pageshowmodle">
+		<span>{{currentPage}} / {{totalPages}}</span>页
+		<span>{{totalItems}}条数据</span>
+	</div>
+
+	<div class="pagefen">
+		<pagination  [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [maxSize]="maxSize" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [boundaryLinks]="true" (pageChanged)='pageChanged($event)' (numPages)='pageNumChange($event)' class="pagination-sm"></pagination>
+	</div>
+</div>

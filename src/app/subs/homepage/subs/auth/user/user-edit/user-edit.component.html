@@ -1,0 +1,275 @@
+<div [hidden]="!submitted">
+	<div id="boom">
+		<div id="icon"><i class="fa fa-hand-peace-o fa-5x"></i></div>
+		<div id="tips">
+			<span *ngIf="isAdd">添加成功</span>
+			<span *ngIf="!isAdd">编辑成功</span>
+		</div>
+		<div id="btns">
+			<button *ngIf="isAdd" (click)="routeAddUser()">继续添加用户</button>
+			<button (click)="userCancel(isAdd)">回到列表</button>
+		</div>
+	</div>
+</div>
+<div [hidden]="submitted">
+	<div class="header clearfix" *ngIf="isAdd">
+		<span class="head icon">|</span><span class="head" >添加用户</span>
+		<div class="btnHeader head">
+			<button type="button" class="btn btn-primary" (click)="userAdd(user_edit_form)" [disabled]="!user_edit_form.form.valid||isSaving">保存用户</button>
+			<button class="btn btn-default" (click)="userReset()">重置</button>
+		</div>
+	</div>
+	<div class="header clearfix"  *ngIf="!isAdd">
+		<span class="head icon">|</span><span class="head" >修改用户</span>
+		<div class="btnHeader head">
+			<button type="button" class="btn btn-primary" (click)="userEdit(user_edit_form)" [disabled]="!user_edit_form.form.valid||isSaving">修改用户</button>
+			<button class="btn btn-default" (click)="userCancel()">放弃编辑</button>
+			<button class="btn btn-default" (click)="resetPassword()">重置密码</button>
+		</div>
+		<span *ngIf="editErrorMsg" style="color:#c30e2e;">{{editErrorMsg}}</span>
+	</div>
+	<main>
+		<div class="container">
+			<form class="form-horizontal" role="form" #user_edit_form="ngForm">
+				<div id="user-info" class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+					<div class="main-title">用户信息</div>
+					<div class="form-group">
+						<label for="phone" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label required-item-label">注册手机号</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input #phone type="text" class="form-control" id="phone" name="phone" required minlength="11" maxlength="11" pattern="^[0-9]*$" [(ngModel)]="user.phone" (blur)="blurPhone(phone)">
+							<div *ngIf="formErrors.phone" class="alert alert-danger">
+								{{ formErrors.phone }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="head_thumbnail" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">头像</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<alphain-file-upload #head_thumbnail [attr_width]="'140px'" [attr_height]="'140px'" (fileData)="head_thumbnail_data($event)" [resetTrigger]="resetTrigger" [thumbnail_url]="user.head_thumbnail_url"></alphain-file-upload>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="name" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label required-item-label">姓名</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" id="name" name="name" required [(ngModel)]="user.name">
+							<div *ngIf="formErrors.name" class="alert alert-danger">
+								{{ formErrors.name }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="company" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label required-item-label">机构简称</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" #company name="company" required 
+								[(ngModel)]="user.company"
+								(typeaheadOnSelect)="orgsOnSelect($event)"
+								[typeaheadOptionField]="'organizationShortName'"
+								[typeahead]="dataSourceOrgs"
+								(typeaheadLoading)="changeOrgsLoading($event)"
+								(typeaheadNoResults)="changeOrgsNoResults($event)"
+								[typeaheadOptionsLimit]="10"
+								[typeaheadWaitMs]="200" 
+								(blur)="blurCompany(company,$event)"
+								(change)="changeCompany(company,$event)">
+							<div *ngIf="orgsLoading===true">
+								<i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+							</div>
+							<div *ngIf="orgsNoResults===true" class="" style="">
+								<i class="glyphicon glyphicon-remove"></i> 无结果
+							</div>
+							<div *ngIf="formErrors.company" class="alert alert-danger">
+								{{ formErrors.company }}
+							</div>
+							<input type="text" name="companyId" [hidden]="'true'" [(ngModel)]="user.companyId">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="department" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label required-item-label">部门</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" id="department" name="department" required 
+								[(ngModel)]="user.department"
+								(typeaheadOnSelect)="depsOnSelect($event)"
+								[typeaheadOptionField]="'departmentName'"
+								[typeahead]="dataSourceDeps"
+								(typeaheadLoading)="changeDepsLoading($event)"
+								(typeaheadNoResults)="changeDepsNoResults($event)"
+								[typeaheadOptionsLimit]="10"
+								[typeaheadWaitMs]="200">
+							<div *ngIf="depsLoading===true">
+								<i class="glyphicon glyphicon-refresh ng-hide" style=""></i>
+							</div>
+							<div *ngIf="depsNoResults===true" class="" style="">
+								<i class="glyphicon glyphicon-remove"></i> 无结果
+							</div>
+							<div *ngIf="formErrors.department" class="alert alert-danger">
+								{{ formErrors.department }}
+							</div>
+							<input type="text" name="departmentId" [hidden]="'true'" [(ngModel)]="user.departmentId">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="position" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label required-item-label">职位</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" id="position" name="position" required [(ngModel)]="user.position">
+							<div *ngIf="formErrors.position" class="alert alert-danger">
+								{{ formErrors.position }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="contact" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label required-item-label">联系电话</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" id="contact" name="contact" maxlength="20" required [(ngModel)]="user.contact">
+							<div *ngIf="formErrors.contact" class="alert alert-danger">
+								{{ formErrors.contact }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="work_contact" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">工作电话</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" id="work_contact" name="work_contact" maxlength="20" [(ngModel)]="user.work_contact">
+							<div *ngIf="formErrors.work_contact" class="alert alert-danger">
+								{{ formErrors.work_contact }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="mail" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">公司邮箱</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="mail" class="form-control" id="mail" name="mail" [(ngModel)]="user.mail" pattern="^(\w)+(\.\w+)*@(\w)+((\.\w{2,3}){1,3})$">
+							<div *ngIf="formErrors.mail" class="alert alert-danger">
+								{{ formErrors.mail }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="work_address" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">工作地址</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" id="work_address" name="work_address" [(ngModel)]="user.work_address">
+							<div *ngIf="formErrors.work_address" class="alert alert-danger">
+								{{ formErrors.work_address }}
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="nickname" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">昵称</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" id="nickname" name="nickname" [(ngModel)]="user.nickname">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="sex" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">性别</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<select name="sex" id="sex" class="form-control" [(ngModel)]="user.sex">
+								<option value="3" selected>不详</option>
+								<option value="1">男</option>
+								<option value="2">女</option>
+							</select>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="birthday" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">生日</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<p-calendar name="birthday" [(ngModel)]="user.birthday" [monthNavigator]="true" [yearNavigator]="true" yearRange="1960:2030" dateFormat="yy-mm-dd"></p-calendar>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="home_address" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">家乡</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" id="home_address" name="home_address" [(ngModel)]="user.home_address">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="qq_num" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">QQ号</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" id="qq_num" name="qq_num" [(ngModel)]="user.qq_num">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="wechat_num" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">微信号</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input type="text" class="form-control" id="wechat_num" name="wechat_num" [(ngModel)]="user.wechat_num">
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="referrer_phonenum" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">推荐人注册手机</label>
+						<div class="col-lg-7 col-md-7 col-sm-7 col-xs-7">
+							<input #referrer_phonenum type="text" class="form-control" id="referrer_phonenum" name="referrer_phonenum" [(ngModel)]="user.referrer_phonenum" minlength="11" maxlength="11" pattern="^[0-9]*$">
+							<div *ngIf="formErrors.referrer_phonenum" class="alert alert-danger">
+								{{ formErrors.referrer_phonenum }}
+							</div>
+						</div>
+						<div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+							<button type="button"  class="btn btn-primary" (click)="getReferrer(referrer_phonenum,referrer)" [disabled]="formErrors.referrer_phonenum">匹配</button>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="referrer" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">推荐人</label>
+						<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+							<input #referrer type="text" class="form-control" id="referrer" name="referrer" [(ngModel)]="user.referrer" disabled>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" >
+					<div id="card-info">
+						<div class="main-title">名片信息</div>
+						<div class="form-group">
+							<label for="card_thumbnail" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">名片</label>
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+								<alphain-file-upload id="card_thumbnail" [attr_width]="'282px'" [attr_height]="'172px'" (fileData)="name_card_data($event)" (fileUrl)="name_card_url($event)" [resetTrigger]="resetTrigger" [thumbnail_url]="user.name_card_url"></alphain-file-upload>
+								<input type="text" name="name_card_url" class="form-control" [(ngModel)]="user.name_card_url"  style="display:none;">
+								<div *ngIf="formErrors.name_card_url" class="alert alert-danger">
+									{{ formErrors.name_card_url }}
+								</div>
+							</div>
+						</div>
+					</div>
+					<div id="system-info">
+						<div class="main-title">系统信息</div>
+						<div class="form-group" *ngIf="!isAdd">
+							<label for="userStatus" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">用户状态</label>
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+								<label name="userStatus" class="control-label">{{user.userStatus | userStatus}}</label>
+								<!-- 1 正常 3 冻结 -->
+							</div>
+						</div>
+						<div class="form-group" *ngIf="!isAdd">
+							<label for="approveStatus" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">实名认证状态</label>
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+								<label name="approveStatus" class="control-label">{{user.approveStatus | approveStatus}}</label>
+								<!-- 4 未认证 3 已认证 -->
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="mailStatus" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">邮箱认证状态</label>
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+								<div class="btn-group">
+									<label name="mailStatus" class="btn btn-mint" [(ngModel)]="user.mailModel" btnRadio="1">未认证</label>
+									<label name="mailStatus" class="btn btn-mint" [(ngModel)]="user.mailModel" btnRadio="3">已认证</label>
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="visitStatus" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">回访状态</label>
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+								<div class="btn-group" *ngIf="isAdd">
+									<label name="visitStatus" class="btn btn-mint" [(ngModel)]="user.visitModel" btnRadio="1">未回访</label>
+									<label name="visitStatus" class="btn btn-mint" [(ngModel)]="user.visitModel" btnRadio="2">已回访</label>
+								</div>
+								<label name="visitStatus" class="control-label" *ngIf="!isAdd">{{user.visitModel | visitStatus}}</label>
+							</div>
+						</div>
+						<div class="form-group">
+							<label for="backup" class="col-lg-3 col-md-3 col-sm-3 col-xs-3 control-label">用户备注</label>
+							<div class="col-lg-9 col-md-9 col-sm-9 col-xs-9">
+								<textarea name="backup" class="form-control" rows="5" id="backup" [(ngModel)]="user.backup"></textarea>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</div>
+	</main>
+</div>

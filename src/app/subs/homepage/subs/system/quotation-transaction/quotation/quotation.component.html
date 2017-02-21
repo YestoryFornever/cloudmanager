@@ -1,0 +1,484 @@
+
+<div class="row ">
+        <div class="btn-group btnborder " style="display: block;">
+            <div class="col-xs-11">
+            	<div class="one" style="height:110px;border:1px solid #666;">
+	                <div class="two" style="width:100%;margin-top:10px;">
+	                    <span style="float:left; padding: 5px 8px;">机构类型</span>
+	                    <label  class="btn btn-mint btnB10" (click)="changeStatus2All(this.organizationType)" [(ngModel)]="organizationType.a " btnCheckbox >不限</label>
+					    <label  class="btn btn-mint btnB10" (click)="changeStatus2(this.organizationType)" [(ngModel)]="organizationType.a1" btnCheckbox >银行</label>
+						<label  class="btn btn-mint btnB10" (click)="changeStatus2(this.organizationType)" [(ngModel)]="organizationType.a2" btnCheckbox >证券</label>
+						<label  class="btn btn-mint btnB10" (click)="changeStatus2(this.organizationType)" [(ngModel)]="organizationType.a3" btnCheckbox >基金</label>
+						<label  class="btn btn-mint btnB10" (click)="changeStatus2(this.organizationType)" [(ngModel)]="organizationType.a5" btnCheckbox >保险</label>
+						<label  class="btn btn-mint btnB10" (click)="changeStatus2(this.organizationType)" [(ngModel)]="organizationType.a6" btnCheckbox >资产管理</label>
+						<label  class="btn btn-mint btnB10" (click)="changeStatus2(this.organizationType)" [(ngModel)]="organizationType.a7" btnCheckbox >信托公司</label>
+						<label  class="btn btn-mint btnB10" (click)="changeStatus2(this.organizationType)" [(ngModel)]="organizationType.a8" btnCheckbox >财务公司</label>
+						<label  class="btn btn-mint btnB10" (click)="changeStatus2(this.organizationType)" [(ngModel)]="organizationType.a4" btnCheckbox >投资公司</label>
+						<label  class="btn btn-mint btnB10" (click)="changeStatus2(this.organizationType)" [(ngModel)]="organizationType.a11" btnCheckbox >企业</label>
+						<label  class="btn btn-mint btnB10" (click)="changeStatus2(this.organizationType)" [(ngModel)]="organizationType.a13" btnCheckbox >其他金融</label>
+	                </div>
+	                <div class="two" style="width:100%;">
+						<!-- <div class="two_inp"> -->
+					        <span style="float:left; padding: 5px 8px;">机构名称</span>
+					         <input #cm req placeholder="全部" class="form-control kuan" 
+		                    [(ngModel)]="orc.name" 
+		                    [typeahead]="orc" 
+		                    (typeaheadOnSelect)="typeaheadOnSelects($event)"   
+		        			[typeaheadOptionField]="'orc.name'" 
+		                    [ngModelOptions]="{standalone: true}"
+		                    style="display:inline;height:30px;width:150px;"
+		                    >
+					      
+					                   
+					          
+					        <!-- <input class="inp" req placeholder="请输入机构名称"  type="text" /> -->
+				        <!-- </div> -->
+				        <span>用户姓名</span>
+				        <input  class="form-control " style="display:inline;height:30px;width:150px;" placeholder="请输入用户姓名"  type="text" [(ngModel)]="default.userName"/>
+				        <span>注册手机号</span>
+				        <input   class="form-control " style="display:inline;height:30px;width:150px;"req placeholder="请输入注册手机号"  type="text" [(ngModel)]="default.loginName" />
+				    </div>
+			    </div> 
+               <div style="clear: both;"></div>
+               <div class="one">
+	                <div class="two" style="margin-top:10px;">
+
+	                    <span style="float:left; padding: 5px 8px;">债券类型</span>
+	                    <!-- <label class="btn btn-mint btnB10"  btnCheckbox >用户充值</label> (click)="changeStatus1All()"-->
+	                    <label class="btn btn-mint btnB10" (click)="changeStatus2All(this.checkModel)" btnCheckbox [(ngModel)]="checkModel.a" >不限</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.checkModel)" [(ngModel)]="checkModel.b1" btnCheckbox >国债</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.checkModel)"  [(ngModel)]="checkModel.b2" btnCheckbox >央票</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.checkModel)"  [(ngModel)]="checkModel.b3" btnCheckbox >金融债</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.checkModel)"  [(ngModel)]="checkModel.b4" btnCheckbox >地方债</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.checkModel)"  [(ngModel)]="checkModel.b5" btnCheckbox >短融</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.checkModel)"  [(ngModel)]="checkModel.b6" btnCheckbox >中票</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.checkModel)"  [(ngModel)]="checkModel.b7" btnCheckbox >企业债</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.checkModel)"  [(ngModel)]="checkModel.b8" btnCheckbox >同业存单</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.checkModel)"  [(ngModel)]="checkModel.b9" btnCheckbox >公司债</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.checkModel)"  [(ngModel)]="checkModel.b99" btnCheckbox >其他</label>
+	                </div>
+	                <div class="two">
+	                    <span style="float:left; padding: 5px 8px;">剩余期限</span>
+	                    <label class="btn btn-mint btnB10"  btnCheckbox   (click)="changeStatus2All(this.rsdtrm)"  [(ngModel)]="rsdtrm.a ">不限</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.rsdtrm)" [(ngModel)]="rsdtrm.c1" btnCheckbox>&lt;=3M</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.rsdtrm)" [(ngModel)]="rsdtrm.c2" btnCheckbox>3~6M</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.rsdtrm)" [(ngModel)]="rsdtrm.c3" btnCheckbox>6~9M</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.rsdtrm)" [(ngModel)]="rsdtrm.c4" btnCheckbox>9~12M</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.rsdtrm)" [(ngModel)]="rsdtrm.c5" btnCheckbox>1~3Y</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.rsdtrm)" [(ngModel)]="rsdtrm.c6" btnCheckbox>3~5Y</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.rsdtrm)" [(ngModel)]="rsdtrm.c7" btnCheckbox>5~7Y</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.rsdtrm)" [(ngModel)]="rsdtrm.c8" btnCheckbox>7~10Y</label>
+						<label class="btn btn-mint btnB10" (click)="changeStatus2(this.rsdtrm)" [(ngModel)]="rsdtrm.c9" btnCheckbox>>10Y</label>
+	               	</div>
+	             </div>
+                <div style="clear: both;"></div>
+                <div class="one">
+	                <div class="two" style="margin-top:10px;">
+	                    <div class="three"style="width:220px;">
+					        <span style="float:left; padding:5px 8px;">代码/简称</span>
+					       <!--  <p-autoComplete [(ngModel)]="keyword" [suggestions]="array1" (completeMethod)="search($event)" field="name" 
+    placeholder="代码" [minLength]="1"></p-autoComplete> -->
+					    
+					        <input #cm req placeholder="全部" class="form-control kuan" 
+		                    [(ngModel)]="bondName" 
+		                    [typeahead]="array1" 
+		                    (typeaheadOnSelect)="typeaheadOnCompanys($event)"   
+		        			[typeaheadOptionField]="'array1.name'" 
+		                    [ngModelOptions]="{standalone: true}"
+		                    style="width:140px;height:30px;"
+		                    >
+		               
+					    </div>
+					     <!-- <div class="three">
+					        <span style="float:left; padding: 5px 8px;" style="margin-top:10px;">代码/简称</span>
+					        <input  class="form-control " style="display:inline;height:30px;width:150px;" req placeholder=""  type="text" [(ngModel)]="default.bondCd" />
+					        
+					    </div> -->
+	                    <div class="three" >
+		                    <span style="float:left; padding: 5px 4px;">报价状态</span>
+		                    <label class="btn btn-mint btnB10"  btnCheckbox  (click)="changeStatus2All(this.ofrEStatus)"  [(ngModel)]="ofrEStatus.a ">不限</label>
+		                    <label class="btn btn-mint btnB10" (click)="changeStatus2(this.ofrEStatus)" [(ngModel)]="ofrEStatus.d1" btnCheckbox>有效</label>
+		                    <label class="btn btn-mint btnB10" (click)="changeStatus2(this.ofrEStatus)" [(ngModel)]="ofrEStatus.d3" btnCheckbox >成交</label>
+		                    <label class="btn btn-mint btnB10" (click)="changeStatus2(this.ofrEStatus)" [(ngModel)]="ofrEStatus.d2" btnCheckbox >撤销</label>
+		                </div>
+		                <div class="three">
+		                	<div class="btn-group btnborder">
+		                	<span style="float:left; padding: 5px 4px;">方向</span>
+		                    <button class="btn btn-mint " (click)="defaultFn()" [(ngModel)]="default.drc" btnRadio=""  >不限</button>
+		                    <button class="btn btn-mint "  [(ngModel)]="default.drc" btnRadio="1"  >卖出</button>
+		                    <button class="btn btn-mint "  [(ngModel)]="default.drc" btnRadio="-1" >买入</button>
+		                    </div>
+		                </div>
+						
+
+
+
+		                <div class="three" >
+		                	
+						        <span style="float:left; padding: 5px 8px;">报价日期</span>
+						        <p-calendar [monthNavigator]="true" [yearNavigator]="true" [locale]= 'mon'  dateFormat="yy-mm-dd"  [(ngModel)]='myStartTime' yearRange="2000:2050" placeholder=""></p-calendar>&nbsp;到&nbsp;
+						        <p-calendar [monthNavigator]="true" [yearNavigator]="true" [locale]= 'mon'  dateFormat="yy-mm-dd"   [(ngModel)]='myEndTime' yearRange="2000:2050" placeholder="2017-01-01"></p-calendar>
+						   
+		                </div>
+	                </div>
+	                <div class="two" style=" width:100%;">
+	                	<div class="three" style="width:40%;">
+	                		<span style="float:left; padding: 5px 8px;">挂牌类型</span>
+		                   <label class="btn btn-mint btnB10"  btnCheckbox  (click)="changeStatus2All(this.gpType)"  [(ngModel)]="gpType.a ">不限</label>
+		                   <label class="btn btn-mint btnB10" (click)="changeStatus2(this.gpType)" [(ngModel)]="gpType.f1" btnCheckbox >公开挂牌</label>
+		                   <label class="btn btn-mint btnB10" (click)="changeStatus2(this.gpType)" [(ngModel)]="gpType.f2" btnCheckbox >定向发送</label>
+		                   <label class="btn btn-mint btnB10" (click)="changeStatus2(this.gpType)" [(ngModel)]="gpType.f3" btnCheckbox >客服代挂</label>
+						 <!-- <input  type="checkBox"   class="btn btn-mint btnB10" (click)="changeStatus2(this.gpType)" [(ngModel)]="gpType.f3"  >客服代挂 -->
+	                	</div>
+						<!-- <input  type="checkBox"  (click)="changeStatus2(this.gpType)" [(ngModel)]="gpType.f3"  >客服代挂  -->
+	                	 <div class="three" style="width:20%;float:right;padding-left:20px;">
+	                	 	<button class="condition btn btn-primary sub" (click)="getBondLists()">查询</button>
+	                	 </div>
+		                    
+	                </div>
+	                
+	             </div>
+               
+            </div>
+        </div>
+    </div>
+<!-- list -->
+<!-- <div class="tableList clearfix"> -->
+<!-- <span *ngIf="( sumCoinLists.totalCoin >0 )">+</span> -->
+ <!-- {{sumCoinLists.totalIncome  | numAddComma2}}， -->
+ <!-- {{sumCoinLists.totalExpenditure  | numAddComma2}} -->
+		 <div class="screenTop">
+			 <div class="screenTop_one">
+			 	<span >当前筛选下，共计报价{{message.bondSize}}笔，金额{{num}}亿。 </span>
+			 </div>
+			 <div class="screenTop_two">
+			 	<button class="btn btn-primary "(click)="selectUser.show()">发送给用户</button>
+				&nbsp;&nbsp;<a href="javascript:0;" >导出为excel</a>
+			 </div>
+		 	
+		 </div>
+		 
+		    <div class=" tableList ">
+			    <table class="table table-bordered table-hover table_width">
+			        <thead>
+			            <tr  (click)="orderSelect()">
+			                <!-- <td class="info longTxt">操作用户姓名</td> -->
+			                
+			                <th class="shortTxt"></th>
+			                <th class="info  middleText" style="text-align:center;" >操作</th>
+							<th class="info " >用户姓名</th>
+							<th class="info" >注册手机</th>
+							<th class="info " >机构名称</th>
+							<th class="info  shortTxt" >方向</th>
+							<th class="info" >债券简称</th>
+							<th class="info" >债券代码</th>
+							<th class="info " >剩余期限</th>
+							<th class="info " >数量(万)</th>
+							<th class="info  longText" >收益率(%)</th>
+							<th class="info" >净价(元)</th>
+							<th class="info " >备注信息</th>
+							<th class="info " style="text-align:center;">报价状态</th>
+							<th class="info " >报价时间</th>
+							<th class="info " >挂牌类型</th>
+							<th class="info" >操作人</th>
+							
+			            </tr>
+			        </thead>
+			        <tbody  #XXX id="list" *ngFor="let list of data" >
+			           <tr #userList  class="Userlist">
+			           		
+							<td><input type="checkbox"></td>
+							<td><a href="javascript:void(0)" (click)="userHistory.show()">查看议价记录</a>&nbsp;<a href="javascript:void(0)" *ngIf="list.ofrEStatus=='有效'" >撤销</a></td>
+							<td><div class="td" [tooltip]="list.userName">{{list.userName}}</div></td>
+							<td ><div class="td" [tooltip]="list.loginName">{{list.loginName}}</div></td>
+							<td ><div class="td" [tooltip]="list.organizationFullName">{{list.organizationFullName}}</div></td>
+							<td>{{list.drc}}</td>
+							<td><div class="td"[tooltip]="list.bondShtrm">{{list.bondShtrm}}</div></td>
+							<td><div class="td" [tooltip]="list.bondCd">{{list.bondCd}}</div></td>
+							<td>{{list.rsdtrm}}</td>
+							<td><div class="td" [tooltip]="list.num">{{list.num}}</div></td>
+							<td>{{list.yldrto}}</td>
+							<td><div class="td"[tooltip]="list.netprc">{{list.netprc}}</div></td>
+							<td><div class="td" [tooltip]="list.rmrk">{{list.rmrk}}</div></td>
+							<td style="text-align:center;">{{list.ofrEStatus}}</td>
+							<td><div class="td" [tooltip]="list.ofrDt">{{list.ofrDt}}</div></td>
+							<td>{{list.gpType}}</td>
+							<td>{{list.gohUserNm}}</td>
+							
+						</tr> 
+						<!-- <tr>
+							<td><input type="checkbox"></td>
+							<td>张三</td>
+							<td>12345678901</td>
+							<td>国寿安保基金管理有限公司</td>
+							<td>卖出</td>
+							<td>16国开10</td>
+							<td>160210.IB</td>
+							<td>1.56Y</td>
+							<td>5000万</td>
+							<td>3.51%</td>
+							<td>100.25元</td>
+							<td>这里是备注</td>
+							<td>成交</td>
+							<td>2016-11-22 12:00:45</td>
+							<td>公开挂牌</td>
+							<td></td>
+							<td><a href="javascript:void(0)" (click)="userHistory.show()" >查看议价记录</a></td>
+						</tr>  -->
+			                
+			        </tbody>
+			        <!--<tbody #XXX id="list" *ngFor="let userMsg of userMsge">
+			                
+			            </tbody>-->
+			    </table>
+			</div>
+
+<!-- 分页 -->
+<div class="row pagerow">
+    <div class="pageshowleft">每页显示
+        <select #selectPage name="" id="msgNum" (change)="sizeData(selectPage.value,userList)">
+            <option #optionPage *ngFor="let msgNumber of msgNumbers" value={{msgNumber.Number}}>{{msgNumber.Number}}</option>
+        </select>
+        条数据
+    </div>
+    <div class="pageshowmodle">
+        <span>{{currentPage}} / {{totalPages}}</span>页
+        <span>{{totalItems}}条数据</span>
+    </div>
+    <div class="pagefen">
+        <pagination [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [maxSize]="maxSize" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [boundaryLinks]="true" (pageChanged)='pageChanged($event,allcheck)' (numPages)='pageNumChange($event)' class="pagination-sm"></pagination>
+    </div>
+</div>
+<!-- 弹窗 -->
+<!-- 选择用户弹窗 -->
+ 
+
+
+<div bsModal #selectUser="bs-modal" class="modal fade diagle" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm  ">
+    <div class="modal-content modal-alert">
+      <div class="modal-header modal-nav">
+        <span class="modal-title pull-left" style="font-size:20px;font-weight:400;padding-top:4px;">用户选择</span>
+        <button type="button" class="close pull-right" aria-label="Close" (click)="selectUser.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+	        <div class="modal_main">
+				       <p><label for="">注册手机</label><input type="text"></p>
+				       <p><label for="">用户信息</label><span>张三 中国工商银行 金融同业部 交易员</span></p>
+				       <div class="modal_text">
+					       	<div class="modal_left">
+					       		<label for="">报价信息</label>
+					       	</div>
+					       	<div class="modal-right">
+						       	<ul>
+						       		<li>
+						       			卖出 16国开10 160210.IB  1.56Y 5000万 3.51% 100.25元 这里是备注
+						       		</li>
+						       		<li>卖出 16国开10 160210.IB  1.56Y 5000万 3.51% 100.25元 这里是备注</li>
+						       	</ul>
+					       		
+							   		
+					       	</div>
+						   		
+				       	
+				       </div>
+				        		
+		     </div>
+       		<div class="btnstyle ">
+				<button type="button" class="btn btn-default btnhoverlan" (click)
+						="selectUser.hide()">取消</button>
+				<button type="button" class="btn btn-primary btnhoverju"(click)="editRole(userRole)">保存</button>
+			</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 议价记录弹窗 -->
+	<!-- <button class="btn"  >议价记录弹窗 </button> -->
+<div bsModal #userHistory="bs-modal" class="modal fade diagle" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-sm  ">
+    <div class="modal-content modal-history">
+	      <div class="modal-header modal-nav" >
+	        <span style="font-size:16px;font-weight:600;">议价历史:</span>&nbsp;&nbsp;<span>卖出 16国开10 160210.IB 3.51%  5000万</span>
+	        <button type="button" class="close pull-right" aria-label="Close" (click)="userHistory.hide()">
+	          <span aria-hidden="true">&times;</span>
+	        </button>
+	      </div>
+	      <div class="talk">
+				        		<p>议价人数：3人</p>
+			</div>
+	      <div class="modal-body">
+	        <div class="modal_table">
+			        		<ul>
+			        			<li>
+			        				
+			        				<div class="table_middle">
+												<table class="table table-bordered table-hover" >
+															<thead>
+																<tr>
+																	<th colspan="2" style=""></th>
+																	<th colspan="4"><span style="padding-left:30%;" >买方</span><span style="padding-left:20%;">建设银行-李一</span></th>
+																	
+																</tr>
+															</thead>
+															<tbody>
+																<tr style="color:red;">
+																	<td colspan="2"  >1</td>
+																	<!-- <td></td> -->
+																	<td>张三</td>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																</tr> 
+																<tr>
+																	<td colspan="2"  ></td>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																	<td>16国</td>
+																</tr> 
+																<tr>
+																	<td colspan="2" ></td>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																	<td>16国</td>
+																</tr> 
+																<tr>
+																<td colspan="2"  ></td>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																	<td>16国</td>
+																</tr> 
+																
+															</tbody>
+													 	</table>
+												
+			        				</div>
+			        				<div class="table_right">
+			        					
+												<table class="table table-bordered table-hover ">
+															<thead>
+																<tr>
+																	<th colspan="4">
+																	<span style="padding-left:20%;" >卖方</span><span style="padding-left:10%;">工商银行-张三</span><span style="padding-left:10%; color:red;">成交</span></th>
+																	
+																</tr>
+															</thead>
+															<tbody>
+																<tr >
+																	<td>张三</td>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																</tr> 
+																<tr>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																	<td>16国</td>
+																</tr> 
+																<tr>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																	<td>16国</td>
+																</tr> 
+																<tr>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																	<td>16国</td>
+																</tr> 
+																
+															</tbody>
+												</table>
+			        				</div>
+			        				
+			        			</li>
+			        			<li>
+			        				
+			        				<div class="table_middle">
+												<table class="table table-bordered table-hover" >
+															<thead>
+																<tr>
+																	<th colspan="2" ></th>
+																	<th colspan="4"><span style="padding-left:30%;" >买方</span><span style="padding-left:20%;">建设银行-李一</span></th>
+																	
+																</tr>
+															</thead>
+															<tbody>
+																<tr style="color:red;">
+																	<td colspan="2"  >1</td>
+																	<!-- <td></td> -->
+																	<td>张三</td>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																</tr> 
+																<tr>
+																	<td colspan="2"  ></td>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																	<td>16国</td>
+																</tr> 
+																<tr>
+																	<td colspan="2" ></td>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																	<td>16国</td>
+																</tr> 
+																
+																
+															</tbody>
+													 	</table>
+												
+			        				</div>
+			        				<div class="table_right">
+			        					
+												<table class="table table-bordered table-hover ">
+															<thead>
+																<tr>
+																	<th colspan="4">
+																	<span style="padding-left:20%;" >卖方</span><span style="padding-left:10%;">工商银行-张三</span><span style="padding-left:10%; color:red;">成交</span></th>
+																	
+																</tr>
+															</thead>
+															<tbody>
+																<tr >
+																	<td>张三</td>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																</tr> 
+																<tr>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																	<td>16国</td>
+																</tr> 
+																<tr>
+																	<td>1234</td>
+																	<td>国寿</td>
+																	<td>卖出</td>
+																	<td>16国</td>
+																</tr> 
+																
+															</tbody>
+												</table>
+			        				</div>
+			        				
+			        			</li>
+			        		</ul>
+			        		
+			        	</div>
+			        </div>
+       		
+      </div>
+    </div>
+  </div>

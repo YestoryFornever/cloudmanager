@@ -1,0 +1,97 @@
+<div class="header clearfix">
+	<span class="head icon">|</span><span class="head" >VIP服务</span>
+	<div class="btnHeader head">
+		<button class="btn btn-primary" (click)="addVIP.show()">新增</button>
+		<button class="btn btn-primary" >删除</button>
+        <button class="btn btn-primary" (click)="returnTo()">返回</button>
+    </div>
+</div>
+<div class="tableList " >
+	<table class="table table-bordered table-hover " >
+		<thead >
+			<tr>
+				<td class="info middleTxt" style="text-align: center">操作</td>
+				<td class="info "><input #allcheck type="checkbox" name="allCheck"  *ngIf="0" (change)="checkAll(allcheck)"> 服务名称</td>
+				<td class="info shortTxt" >服务类型</td>
+				<td class="info shortTxt">服务状态</td>
+				<td class="info middleTxt">创建日期</td>
+			</tr>
+		</thead>
+		<tbody  id="list" >
+			<tr #userList class="Userlist">
+				<td style="text-align: center"><a (click)="addTo()">编辑</a> / <a (click)="updateVIP.show()">修改</a></td>
+				<td>向高端用户推荐人气用户</td>
+				<td>用户推荐</td>
+				<td>有效</td>
+				<td>2017-2-8</td>
+				<!-- <td class="table-hover" ><input  *ngIf="0" type="checkbox" #listState name="user" (change)="changeState(listState,userList)" >{{userMsg.registPhone}}</td>
+				<td class="table-hover" #username>{{userMsg.userName}}</td>
+				<td class="table-hover middleTxt" #userMsgName><div [tooltip]="userMsg.company" class="td">{{userMsg.company}}</div></td>
+				<td class="table-hover">{{userMsg.applyTime}}</td> -->
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<!-- pagination -->
+<div class="row pagerow">
+	<div class="pageshowleft">每页显示
+		<select #selectPage name="" id="msgNum" (change)="sizeData(selectPage.value,userList)" [(ngModel)]="itemsPerPage">
+			<option #optionPage  *ngFor="let msgNumber of msgNumbers" value={{msgNumber.Number}}>{{msgNumber.Number}}</option>
+		</select>
+		条数据
+	</div>
+	<div class="pageshowmodle">
+		<span>{{currentPage}} / {{totalPages}}</span>页
+		<span>{{totalItems}}条数据</span>
+	</div>
+
+	<div class="pagefen">
+		<pagination  [firstText]="firstText" [lastText]="lastText" [previousText]="previousText" [nextText]="nextText" [maxSize]="maxSize" [totalItems]="totalItems" [itemsPerPage]="itemsPerPage" [(ngModel)]="currentPage" [boundaryLinks]="true" (pageChanged)='pageChanged($event)' (numPages)='pageNumChange($event)' class="pagination-sm"></pagination>
+	</div>
+</div>
+
+<!--新增VIP服务 -->
+<div bsModal #addVIP="bs-modal" class="modal fade modelPon" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="addVIP.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">新增VIP服务</h4>
+            </div>
+            <div class="modal-body contentxinxi">
+                <div class="pp"><span>服务名称：</span><input type="text" name=""></div>
+                <div class="pp"><span>服务类型：</span><select><option>用户组1</option><option>用户组2</option><option>用户组3</option></select></div>
+               <div class="pp"><span>服务状态：</span><select><option>用户组1</option><option>用户组2</option><option>用户组3</option></select></div>
+                <div class="btnstyle">
+                    <button type="button" class="btn btn-default btnhoverlan">保存</button>
+                    <button type="button" class="btn btn-primary btnhoverju" (click)="addVIP.hide()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--修改VIP服务 -->
+<div bsModal #updateVIP="bs-modal" class="modal fade modelPon" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="updateVIP.hide()">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title">修改VIP服务</h4>
+            </div>
+            <div class="modal-body contentxinxi">
+                <div class="pp"><span>服务名称：</span><input type="text" name=""></div>
+                <div class="pp"><span>服务类型：</span><select><option>用户组1</option><option>用户组2</option><option>用户组3</option></select></div>
+               <div class="pp"><span>服务状态：</span><select><option>用户组1</option><option>用户组2</option><option>用户组3</option></select></div>
+                <div class="btnstyle">
+                    <button type="button" class="btn btn-default btnhoverlan">保存</button>
+                    <button type="button" class="btn btn-primary btnhoverju" (click)="updateVIP.hide()">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
