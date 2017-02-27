@@ -3,8 +3,8 @@ import {NgStyle} from '@angular/common';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { FormControl, FormGroup,NgForm } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadModule } from 'ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import { GroupEditMemberList} from './classes/group-edit-member';
 import { GroupEditMemberService } from './services/group-edit-member.service'
 @Component({

@@ -72,7 +72,7 @@ import { CustomerManageModule } from './subs/auth/customer/customer-manage/custo
 import { ActionManageModule } from './subs/auth/customer/action-manage/action-manage.module'
 import { ContactManageModule } from './subs/auth/customer/contact-manage/contact-manage.module'
 
-import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,DropdownModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule  } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,DropdownModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule  } from 'ng2-bootstrap';
 import { CalendarModule,PickListModule, TreeModule,TreeNode,AutoCompleteModule} from 'primeng/primeng';
 
 import { TfPipe } from '../../pipes/tf.pipes';

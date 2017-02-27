@@ -11,7 +11,7 @@ import {SnsNewsFlashListComponent} from'./subs/sns-news-flash-list/sns-news-flas
 import {SnsNewsFlashChangeComponent} from'./subs/sns-news-flash-change/sns-news-flash-change.componment'
 
 
-import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule  } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule  } from 'ng2-bootstrap';
 
 @NgModule({
 	imports: [

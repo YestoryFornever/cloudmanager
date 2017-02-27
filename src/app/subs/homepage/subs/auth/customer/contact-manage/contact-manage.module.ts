@@ -10,7 +10,7 @@ import {ContactManageListComponent} from './subs/contact-manage-list.component/c
 import {ContactManageChangeComponent} from './subs/contact-manage-change.component/contact-manage-change.component'
 
 
-import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule  } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule  } from 'ng2-bootstrap';
 
 @NgModule({
 	imports: [

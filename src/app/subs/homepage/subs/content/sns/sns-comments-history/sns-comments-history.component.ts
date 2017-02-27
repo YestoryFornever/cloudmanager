@@ -2,8 +2,8 @@ import { Component, ViewChild,OnInit,ChangeDetectorRef,trigger,state,style,trans
 import {NgStyle} from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadModule } from 'ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import { SnsManagementService }  from './../sns-management-services/sns-management.services';
 import { ActivatedRoute, Router }   from '@angular/router';
 import GLOBAL = require('../../../../../../../../public/in.config');

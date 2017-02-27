@@ -5,7 +5,7 @@ import { Router,ActivatedRoute } from '@angular/router';
 import { NgStyle } from '@angular/common';
 
 import { AdministrateRole } from './classes/user-administrate';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import {  UserAdministrateService } from './services/user-administrate.service';
 
 

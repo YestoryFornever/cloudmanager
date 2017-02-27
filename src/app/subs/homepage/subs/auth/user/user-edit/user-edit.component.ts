@@ -2,7 +2,7 @@ import { Component, OnChanges, OnInit, DoCheck, AfterContentInit, AfterContentCh
 import { NgForm } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 
 import { User } from './classes/user-edit';
 

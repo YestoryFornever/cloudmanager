@@ -4,8 +4,8 @@ import { ActivatedRoute, Router ,Params}   from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadModule } from 'ng2-bootstrap';
+// import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import { UserFormService } from '../services/user-form.service'
 @Component({
 	selector: 'user-form-addUser',
@@ -105,13 +105,13 @@ postListMsges(){
 	public typeaheadNoResults:boolean = false; 
 	public companys:Array<string>;
 	public departments:Array<string>;  
-	public typeaheadOnCompanys(e:TypeaheadMatch):void{
+	/*public typeaheadOnCompanys(e:TypeaheadMatch):void{
 	   this.default.organizationId = e.item.organizationId;//id 赋值给隐藏的input。获取公司id 
 	}
 	public typeaheadOnDepartments(e:TypeaheadMatch):void{
 	    
 	    this.default.departmentId = e.item.departmentId;
-	} 
+	} */
 	newsId:number
 	toDetial(){
 		this.newsId=111;

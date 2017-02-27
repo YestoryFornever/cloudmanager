@@ -10,7 +10,7 @@ import {SnsShareDetailsComponent} from'./subs/sns-share-detilas/sns-share-detail
 import {SnsShareListComponent} from'./subs/sns-share-list/sns-share-list.component'
 import {SnsShareAddComponent} from'./subs/sns-share-add/sns-share-add.component'
 
-import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule } from 'ng2-bootstrap';
 
 @NgModule({
 	imports: [

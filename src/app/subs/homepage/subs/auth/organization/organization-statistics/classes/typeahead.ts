@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 
 export class TypeAhead{
 	constructor(){

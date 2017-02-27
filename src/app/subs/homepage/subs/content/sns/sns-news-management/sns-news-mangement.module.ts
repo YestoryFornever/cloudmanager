@@ -13,7 +13,7 @@ import {SnsNewsChangeComponent} from'./subs/sns-news-change/sns-news-change.comp
 
 import {SnsNewsDetailsComponent} from'./subs/sns-news-details/sns-news-details.component'
 
-import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule } from 'ng2-bootstrap';
 
 @NgModule({
 	imports: [

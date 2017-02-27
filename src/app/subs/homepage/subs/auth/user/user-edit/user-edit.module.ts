@@ -4,7 +4,7 @@ import { BrowserModule }  from '@angular/platform-browser';
 import { UserEditComponent } from './user-edit.component';
 import { FileUploadComponent } from './subs/file-upload/file-upload.component';
 
-import { ButtonsModule,TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { ButtonsModule,TypeaheadModule } from 'ng2-bootstrap';
 import { CalendarModule } from 'primeng/primeng';
 
 import { SafeUrlPipe } from '../../../../../../pipes/safeurl.pipes';

@@ -2,9 +2,9 @@ import { Component, ChangeDetectorRef,ViewChild,OnInit,trigger,state,style,trans
 import {NgStyle} from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
-//import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TypeaheadModule } from 'ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
+//import { ModalModule } from 'ng2-bootstrap';
 //import { VersionManagementService } from './services/version-management.service';
 import { CoinGoldDetailServices }  from '../../services/coin-gold-detail.services';
 //

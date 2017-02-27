@@ -4,8 +4,8 @@ import {CalendarModule} from 'primeng/primeng';
 import { ActivatedRoute, Router }   from '@angular/router';//
 import { Observable } from 'rxjs/Observable';
 import { DomSanitizer } from '@angular/platform-browser';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
-import { TypeaheadModule,AlertModule,ButtonsModule} from 'ng2-bootstrap/ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
+import { TypeaheadModule,AlertModule,ButtonsModule} from 'ng2-bootstrap';
 // import { ExcelExportService } from '../../../../services/excel-export.service';
 /*import { ModalDirective } from 'modal.component.ts';*/
 import { GoodsList,GoodsInfo }  from './classes/goods-list';

@@ -4,8 +4,8 @@ import { ActivatedRoute, Router,Params }   from '@angular/router';
 import { DomSanitizer } from '@angular/platform-browser';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadModule } from 'ng2-bootstrap';
+// import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import { UserFormService } from '../services/user-form.service'
 @Component({
 	selector: 'user-form-edit',

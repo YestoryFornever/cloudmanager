@@ -7,8 +7,8 @@ import {CalendarModule,PickListModule} from 'primeng/primeng';
 import GLOBAL = require('../../../../../../../../public/in.config');
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule,AlertModule,ButtonsModule,TooltipModule} from 'ng2-bootstrap/ng2-bootstrap';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadModule,AlertModule,ButtonsModule,TooltipModule} from 'ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import { UserRechargeLogServices } from './services/user-recharge-log.service';
 
 @Component({

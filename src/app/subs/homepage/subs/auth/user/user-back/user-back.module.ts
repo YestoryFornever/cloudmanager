@@ -10,7 +10,7 @@ import {UserBackDetailComponent} from'./subs/user-back-detail/user-back-detail.c
 import {UserBackListComponent} from'./subs/user-back-list/user-back-list.component';
 // import {SnsShareAddComponent} from'./subs/sns-share-add/sns-share-add.component'
 
-import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule  } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule  } from 'ng2-bootstrap';
 
 @NgModule({
 	imports: [

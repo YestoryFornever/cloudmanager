@@ -6,10 +6,10 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
 
 import { ActivatedRoute, Router }   from '@angular/router';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TypeaheadModule } from 'ng2-bootstrap';
 import { OrganizationStatisticsService } from './services/organization-statistics.service';
 import { Organization, OrgCondition } from './classes/organizations';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 //import { BannerManagementService } from './banner-management-service/banner-management.service'
 @Component({
 	selector: 'organization-statistics',

@@ -12,7 +12,7 @@ import { UserFormAddFormComponent } from './user-form-addForm/user-form-addForm.
 import { UserFormVipComponent } from './user-form-vip/user-form-vip.component'
 import { UserFormVipEditComponent } from './user-form-vipEdit/user-form-vipEdit.component'
 import {AutoCompleteModule} from 'primeng/primeng';
-import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule } from 'ng2-bootstrap';
 
 @NgModule({
 	imports: [

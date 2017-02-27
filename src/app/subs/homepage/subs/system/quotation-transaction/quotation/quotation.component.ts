@@ -2,13 +2,13 @@ import { Component, ChangeDetectorRef,ViewChild,OnInit,trigger,state,style,trans
 import {NgStyle} from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-// import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
-// import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
-// import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+// import { TypeaheadModule } from 'ng2-bootstrap';
+// import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
+// import { TypeaheadModule } from 'ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import { LookQuotationService } from './services/quotation.service';
 import {CalendarModule,PickListModule} from 'primeng/primeng';
-import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule  } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule  } from 'ng2-bootstrap';
 
 import { lookQuotation } from './classes/quotation';
 @Component({

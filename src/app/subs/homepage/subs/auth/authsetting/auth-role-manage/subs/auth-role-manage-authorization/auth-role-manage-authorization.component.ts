@@ -3,7 +3,7 @@ import { NgStyle } from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 
 import { AuthRoleManageAuthorizationService } from './services/auth-role-manage-authorization.service';
 import { Role } from '../../classes/role';

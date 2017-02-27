@@ -6,10 +6,10 @@ import {CalendarModule,PickListModule} from 'primeng/primeng';
 
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TypeaheadModule } from 'ng2-bootstrap';
 import { StoresGoodsServices } from './services/stores-goods.services'
 
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 @Component({
 	selector: 'coin-stores-goods-management',
 	templateUrl: './coin-stores-goods-management.component.html',

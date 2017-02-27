@@ -2,8 +2,8 @@ import { Component,ChangeDetectorRef, ViewChild,OnInit,trigger,state,style,trans
 import {NgStyle} from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule,TabsModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadModule,TabsModule } from 'ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import { ActivatedRoute, Router,Params }   from '@angular/router';
 import { SnsManagementService }  from '../../../sns-management-services/sns-management.services';
 import UID =  require('../../../classes/uid')

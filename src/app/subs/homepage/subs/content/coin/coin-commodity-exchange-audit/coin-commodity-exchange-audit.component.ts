@@ -4,7 +4,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Router }   from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import {CalendarModule,PickListModule} from 'primeng/primeng';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import { Order,OrderCondition } from './classes/audit-item';
 import { OrderListService } from './services/coin-commodity-exchange-audit.service';
 @Component({

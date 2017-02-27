@@ -4,8 +4,8 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { ActivatedRoute, Router }   from '@angular/router';//
 import { FormControl, FormGroup,NgForm } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadModule } from 'ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import { GroupBuiltList}  from './classes/group-built';
 import { GroupBuiltService } from './services/group-built.service'
 @Component({

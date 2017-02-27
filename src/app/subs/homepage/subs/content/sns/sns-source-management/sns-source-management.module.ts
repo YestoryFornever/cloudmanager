@@ -9,7 +9,7 @@ import {SnsSourceListComponent} from './subs/sns-source-list/sns-source-list.com
 import {SnsSourceDetialComponent} from'./subs/sns-source-detial/sns-source-detial.componment'
 import {SnsSourceManagementComponent} from'./sns-source-management.componment'
 
-import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule } from 'ng2-bootstrap';
 
 @NgModule({
 	imports: [

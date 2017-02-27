@@ -5,8 +5,8 @@ import { ActivatedRoute, Router ,Params}   from '@angular/router';//
 import { Observable } from 'rxjs/Observable';
 import {PickListModule ,CheckboxModule} from 'primeng/primeng';
 
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
-import { TypeaheadModule,AlertModule,ButtonsModule,TooltipModule} from 'ng2-bootstrap/ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
+import { TypeaheadModule,AlertModule,ButtonsModule,TooltipModule} from 'ng2-bootstrap';
 // import { ExcelExportService } from '../../../../services/excel-export.service'; 
 /*import { ModalDirective } from 'modal.component.ts';*/
 

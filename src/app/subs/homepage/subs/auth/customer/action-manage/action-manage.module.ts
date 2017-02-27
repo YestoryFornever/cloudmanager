@@ -10,7 +10,7 @@ import {ActionManageListComponent} from './subs/action-manage-list/action-manage
 import {ActionManageComponent} from './action-manage.component'
 import {CalendarModule} from 'primeng/primeng';
 
-import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule  } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule  } from 'ng2-bootstrap';
 
 @NgModule({
 	imports: [

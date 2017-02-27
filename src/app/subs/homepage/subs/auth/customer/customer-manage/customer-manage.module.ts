@@ -10,7 +10,7 @@ import {CustomerManageListComponent} from './subs/customer-manage-list/customer-
 import {CustomerManageSerchComponent} from './subs/customer-manage-serch/customer-manage-serch.component'
 import {CustomerManageComponent} from './customer-manage.component'
 
-import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule  } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule  } from 'ng2-bootstrap';
 
 @NgModule({
 	imports: [

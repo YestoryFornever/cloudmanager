@@ -9,7 +9,7 @@ import { UserRelationListComponent } from './user-relation-list/user-relation-li
 import { UserRelationDetailComponent } from './user-relation-detial/user-relation-detial.component'
 import { UserRelationPlateComponent } from './user-relation-plate/user-relation-plate.component'
 import { UserRelationLogComponent } from './user-relation-log/user-relation-log.component'
-import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule ,TooltipModule } from 'ng2-bootstrap';
 import { CalendarModule,PickListModule, TreeModule,TreeNode} from 'primeng/primeng';
 
 @NgModule({

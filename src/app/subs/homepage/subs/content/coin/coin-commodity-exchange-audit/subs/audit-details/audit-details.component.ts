@@ -2,12 +2,12 @@ import { Component, ChangeDetectorRef,ViewChild,OnInit,trigger,state,style,trans
 import {NgStyle} from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TypeaheadModule } from 'ng2-bootstrap';
 import { ActivatedRoute, Router,Params }   from '@angular/router';
 import { Order,OrderCondition } from '../../classes/audit-item';
 import { OrderListService } from '../../services/coin-commodity-exchange-audit.service';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
-//import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
+//import { ModalModule } from 'ng2-bootstrap';
 //import { VersionManagementService } from './services/version-management.service';
 @Component({
 	selector: 'coin-wait-send',

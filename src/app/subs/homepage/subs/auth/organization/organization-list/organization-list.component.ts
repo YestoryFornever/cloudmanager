@@ -4,7 +4,7 @@ import { DomSanitizer } from '@angular/platform-browser';
 import { NgForm } from '@angular/forms';
 import { ActivatedRoute, Router }   from '@angular/router';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 
 import { ExcelExportService } from '../../../../services/excel-export.service';
 import { OrganizationListService } from './services/organization-list.service';

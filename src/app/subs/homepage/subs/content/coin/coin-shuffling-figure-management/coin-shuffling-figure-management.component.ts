@@ -2,13 +2,13 @@ import { Component, ChangeDetectorRef,ViewChild,OnInit,trigger,state,style,trans
 import {NgStyle} from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TypeaheadModule } from 'ng2-bootstrap';
 import { DomSanitizer } from '@angular/platform-browser';
 import {CalendarModule,PickListModule} from 'primeng/primeng';
 
 import { ShufflingFigureServices } from './services/shuffling-figure.services'
 
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 @Component({
 	selector: 'coin-shuffling-figure-management',
 	templateUrl: './coin-shuffling-figure-management.component.html',

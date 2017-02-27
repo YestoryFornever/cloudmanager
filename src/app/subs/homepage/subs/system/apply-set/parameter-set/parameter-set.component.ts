@@ -1,14 +1,14 @@
 import { Component, ChangeDetectorRef,ViewChild,OnInit,trigger,state,style,transition,animate } from '@angular/core';
 import {NgStyle} from '@angular/common';
 import { FormControl, FormGroup } from '@angular/forms';
-import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { ModalModule } from 'ng2-bootstrap';
 
 import {CalendarModule,PickListModule} from 'primeng/primeng';
 
 import { Observable } from 'rxjs/Observable';
-import { TypeaheadModule } from 'ng2-bootstrap/ng2-bootstrap';
-import { TypeaheadMatch } from 'ng2-bootstrap/components/typeahead/typeahead-match.class';
-//import { ModalModule } from 'ng2-bootstrap/ng2-bootstrap';
+import { TypeaheadModule } from 'ng2-bootstrap';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
+//import { ModalModule } from 'ng2-bootstrap';
 import { ParameterSetService } from './services/parameter-set.service';
 @Component({
 	selector: 'parameter-set',
