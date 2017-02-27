@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
 
 import { UserEditComponent } from './user-edit.component';
 import { FileUploadComponent } from './subs/file-upload/file-upload.component';
@@ -15,6 +16,7 @@ import { VisitStatusPipe } from './pipes/visit-status.pipe';
 @NgModule({
 	imports: [
 		BrowserModule,
+		FormsModule,
 		ButtonsModule,TypeaheadModule,
 		CalendarModule
 	],

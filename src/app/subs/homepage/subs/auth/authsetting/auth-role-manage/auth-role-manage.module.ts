@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
+import { FormsModule }   from '@angular/forms';
 
 import { AuthRoleManageComponent } from './auth-role-manage.component';
 import { AuthRoleManageAuthorizationComponent } from './subs/auth-role-manage-authorization/auth-role-manage-authorization.component';
@@ -11,6 +12,7 @@ import { CalendarModule,PickListModule ,TreeModule,TreeNode} from 'primeng/prime
 	imports: [
 		BrowserModule,
 		RouterModule,
+		FormsModule,
 		AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,
 		CalendarModule,PickListModule,TreeModule
 
