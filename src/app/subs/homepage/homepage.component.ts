@@ -6,7 +6,9 @@ import { HomepageService } from './services/homepage.service';
 	selector: 'alphain-homepage',
 	templateUrl: './homepage.component.html',
 	styleUrls: ['./homepage.component.css'],
-	providers:[HomepageService]
+	providers:[
+		HomepageService
+	]
 })
 export class HomepageComponent implements OnInit{
 	constructor(private homepageService:HomepageService){}

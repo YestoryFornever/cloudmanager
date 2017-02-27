@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule }  from '@angular/platform-browser';
 import { HttpModule }     from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { FormsModule }   from '@angular/forms';
 
 import { IndexComponent } from './subs/index/index.component';
 import { SnsShareManagementModule} from './subs/content/sns/sns-share-management/sns-share-management.module'
@@ -85,6 +86,7 @@ import { Ng2Echarts } from 'ng2-echarts';
 	imports: [
 		BrowserModule,
 		HttpModule,
+		FormsModule.forRoot(),
 		UserEditModule,
 		AuthRoleManageModule,
 		RouterModule,
@@ -102,7 +104,7 @@ import { Ng2Echarts } from 'ng2-echarts';
 		SnsShareManagementModule,
 		SnsSourceManagementModule,
 		SnsNewsManagementModule,
-		AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,DropdownModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule,
+		AlertModule.forRoot(),CarouselModule.forRoot(),DatepickerModule.forRoot(),ButtonsModule.forRoot(),CollapseModule.forRoot(),DropdownModule.forRoot(),RatingModule.forRoot(),TypeaheadModule.forRoot(),PaginationModule.forRoot(),ModalModule.forRoot(),TabsModule.forRoot(),TooltipModule.forRoot(),
 		CalendarModule,PickListModule,TreeModule,AutoCompleteModule
 	],
 	declarations: [

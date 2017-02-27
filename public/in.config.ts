@@ -1,7 +1,7 @@
 import { Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 export const INCONFIG = {
-	prod:true,
+	prod:false,
 	projectName:"emanager",
 	getIP(){
 		return this.prod?"":PRIVATECONFIG.ip;
