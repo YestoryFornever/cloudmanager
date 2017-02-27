@@ -3,7 +3,7 @@ import { Component,ViewChild,OnInit,ChangeDetectorRef,Input,ChangeDetectionStrat
 import { FormControl, FormGroup ,NgForm} from '@angular/forms';
 import { ActivatedRoute, Router ,Params}   from '@angular/router';//
 import { Observable } from 'rxjs/Observable';
-// import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
+import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 import { TypeaheadModule,AlertModule,ButtonsModule,TooltipModule} from 'ng2-bootstrap';
 
 import { ExcelExportService } from '../../../../services/excel-export.service'; 
@@ -371,13 +371,13 @@ public typeaheadLoading:boolean = false;
 public typeaheadNoResults:boolean = false; 
 public companys:Array<string>;
 public departments:Array<string>;  
-/*public typeaheadOnCompanys(e:TypeaheadMatch):void{
+public typeaheadOnCompanys(e:TypeaheadMatch):void{
    this.default.organizationId = e.item.organizationId;//id 赋值给隐藏的input。获取公司id 
 }
 public typeaheadOnDepartments(e:TypeaheadMatch):void{
     
     this.default.departmentId = e.item.departmentId;
-}*/ 
+} 
 
 
 // 分页
