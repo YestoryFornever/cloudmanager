@@ -86,7 +86,7 @@ import { Ng2Echarts } from 'ng2-echarts';
 	imports: [
 		BrowserModule,
 		HttpModule,
-		FormsModule.forRoot(),
+		FormsModule,
 		UserEditModule,
 		AuthRoleManageModule,
 		RouterModule,

@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule }     from '@angular/http';
 import { BrowserModule }  from '@angular/platform-browser';
 // import {SnsNewsManagementRouting} from './sns-news-management-routing.module'
-
+import { FormsModule }   from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 import {SnsNewsManagementComponent} from './sns-news-management.component'
@@ -20,6 +20,7 @@ import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,
 		// SnsNewsManagementRouting,
 		BrowserModule,
 		HttpModule,
+		FormsModule,
 		RouterModule,
 		AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule
 	],

@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HttpModule }     from '@angular/http';
 import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
 // import {SnsNewsManagementRouting} from './sns-news-management-routing.module'
 
 import { RouterModule } from '@angular/router';
@@ -17,6 +18,7 @@ import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,
 		BrowserModule,
 		HttpModule,
 		RouterModule,
+		FormsModule,
 		AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule
 		,CalendarModule
 	],

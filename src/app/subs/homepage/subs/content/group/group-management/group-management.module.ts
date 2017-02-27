@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { BrowserModule }  from '@angular/platform-browser';
+import { FormsModule }   from '@angular/forms';
 import { AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule  } from 'ng2-bootstrap';
 
 // import { ButtonsModule,DatepickerModule  } from 'ng2-bootstrap';
@@ -14,6 +15,7 @@ import {GroupEditMessageComponent} from './subs/group-edit-message/group-edit-me
     imports: [
         BrowserModule,
         RouterModule,
+        FormsModule,
        AlertModule,DatepickerModule,ButtonsModule,CollapseModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule
     ],
     declarations: [ 
