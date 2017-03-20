@@ -14,7 +14,9 @@ export class OrganizationListService {
 	private ExtractResult = GLOBAL.INCONFIG.extractResult();
 	private HandleError = GLOBAL.INCONFIG.handleError();
 
-	constructor (private http: Http) {}
+	constructor (private http: Http) {
+		debugger;
+	}
 
 	getOrganizations (orgCondition:OrgCondition): Observable<Organization[]> {
 		// debugger;

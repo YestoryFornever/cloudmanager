@@ -27,8 +27,6 @@ import { PermissionGroupComponent } from './subs/auth/authsetting/permission-gro
 import { CoinCommodityExchangeAuditRouting } from './subs/content/coin/coin-commodity-exchange-audit/coin-commodity-exchange-audit-routing.module';
 import { CoinGoldDetailRouting } from './subs/content/coin/coin-gold-detail/coin-gold-detail-routing.module';
 import { InvoiceManagementRouting } from './subs/content/coin/invoice-management/invoice-management-routing.module';
-import { OrganizationStatisticsComponent } from './subs/auth/organization/organization-statistics/organization-statistics.component'
-
 
 import { UserBackRouting } from './subs/auth/user/user-back/user-back-routing.module';
 import { UserLogComponent  } from './subs/auth/user/user-log/user-log.component';
@@ -63,11 +61,9 @@ import {InvoiceManagementComponent} from './subs/content/coin/invoice-management
 
 
 
-import { CustomerManageRouting } from './subs/auth/customer/customer-manage/customer-manage-routing.module'
-import { ContactManageRouting } from './subs/auth/customer/contact-manage/contact-manage-routing.moudule'
-import { ActionManageRouting } from './subs/auth/customer/action-manage/action-manage-routing.module'
-
-import { EventFollowComponent } from './subs/event/event-management/event-follow/event-follow.component';
+import { CustomerManageRouting } from './subs/auth/customer/customer-manage/customer-manage-routing.module';
+import { ContactManageRouting } from './subs/auth/customer/contact-manage/contact-manage-routing.moudule';
+import { ActionManageRouting } from './subs/auth/customer/action-manage/action-manage-routing.module';
 import { ErrorComponent } from '../error/error.component';
 export const homepageRouting: Routes = [
 	{
@@ -131,10 +127,6 @@ export const homepageRouting: Routes = [
 			{
 				path: 'organization-list',
 				component: OrganizationListComponent
-			},
-			{
-				path: 'organization-statistics',
-				component: OrganizationStatisticsComponent
 			},
 			...UserBackRouting,
 			...authRoleManageRouting,
@@ -243,10 +235,6 @@ export const homepageRouting: Routes = [
 			{
 				path: 'user-management',
 				component: UserManagementComponent
-			},
-			{
-				path: 'event-follow',
-				component: EventFollowComponent
 			},
 			...CustomerManageRouting,
 			...ContactManageRouting,

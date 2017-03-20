@@ -6,6 +6,7 @@ import { ActivatedRoute, Router }   from '@angular/router';
 import { Observable } from 'rxjs/Observable';
 import { TypeaheadMatch } from 'ng2-bootstrap/typeahead';
 
+import { GlobalService } from '../../../../../../services/global.service';
 import { ExcelExportService } from '../../../../services/excel-export.service';
 import { OrganizationListService } from './services/organization-list.service';
 import { Organization, OrgCondition } from './classes/organizations';
@@ -21,6 +22,7 @@ import { TypeAhead } from './classes/typeahead';
 		'../../../../css/pagination.css'
 	],
 	providers:[
+		GlobalService,
 		OrganizationListService,
 		ExcelExportService
 	]
@@ -28,6 +30,7 @@ import { TypeAhead } from './classes/typeahead';
 export class OrganizationListComponent implements OnInit {
 	constructor(
 		private changeDetectorRef:ChangeDetectorRef,
+		private globalService:GlobalService,
 		private organizationListService:OrganizationListService,
 		private excelExportService:ExcelExportService,
 		private sanitizer: DomSanitizer,

@@ -37,7 +37,6 @@ import { NavMapComponent } from './subs/frame/nav-map/nav-map.component';
 import { UserListComponent } from './subs/auth/user/user-list/user-list.component';
 import { UserApproveComponent } from './subs/auth/user/user-approve/user-approve.component';
 import { UserApproveHistoryComponent } from './subs/auth/user/user-approve-history/user-approve-history.component';
-import { OrganizationStatisticsComponent } from './subs/auth/organization/organization-statistics/organization-statistics.component'
 import { UserAdministrateComponent } from './subs/auth/user/user-administrate/user-administrate.component';
 import { OrganizationListComponent } from './subs/auth/organization/organization-list/organization-list.component';
 import { AuthDataItemComponent } from './subs/auth/authsetting/auth-data-item/auth-data-item.component';
@@ -48,7 +47,7 @@ import { PermissionGroupComponent } from './subs/auth/authsetting/permission-gro
 import { SnsTagsManagementComponent} from './subs/content/sns/sns-tags-management/sns-tags-management.component';
 import { SnsCommentsHistoryComponent} from './subs/content/sns/sns-comments-history/sns-comments-history.component';
 import { SnsPicsManagementComponent} from './subs/content/sns/sns-pics-management/sns-pics-management.component';
-import { SnsStatisticsComponent } from './subs/content/sns/sns-statistics-management/sns-statistics-management.component'
+import { SnsStatisticsComponent } from './subs/content/sns/sns-statistics-management/sns-statistics-management.component';
 
 import { GroupManagementComponent} from './subs/content/group/group-management/group-management.component';
 
@@ -69,7 +68,6 @@ import { UserFormComponent } from './subs/auth/user/user-form/user-form.componen
 import { CustomerManageModule } from './subs/auth/customer/customer-manage/customer-manage.module';
 import { ActionManageModule } from './subs/auth/customer/action-manage/action-manage.module';
 import { ContactManageModule } from './subs/auth/customer/contact-manage/contact-manage.module';
-import { EventFollowComponent } from './subs/event/event-management/event-follow/event-follow.component';
 
 import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,DropdownModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule  } from 'ng2-bootstrap';
 import { CalendarModule,PickListModule, TreeModule,TreeNode,AutoCompleteModule} from 'primeng/primeng';
@@ -114,7 +112,6 @@ import { Ng2Echarts } from 'ng2-echarts';
 		UserApproveComponent,
 		UserApproveHistoryComponent,
 		OrganizationListComponent,
-		OrganizationStatisticsComponent,
 		AuthDataItemComponent,
 		AuthMenuBtnSettingComponent,
 		AuthUserGroupComponent,
@@ -149,8 +146,6 @@ import { Ng2Echarts } from 'ng2-echarts';
 		InvoiceManagementComponent,
 	
 		SnsPicsManagementComponent,
-
-		EventFollowComponent,
 
 		NumAddCommaPipe,
 		TfPipe,
