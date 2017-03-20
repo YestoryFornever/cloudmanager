@@ -65,13 +65,11 @@ import { AwardManagementComponent} from './subs/content/vchart/award-managerment
 import { BannerManagementComponent} from './subs/content/vchart/banner-management/banner-management.component'
 import { UserManagementComponent} from './subs/content/vchart/user-management/user-management.component'
 import { UserFormComponentModule } from './subs/auth/user/user-form/user-form.component.module';
-import { UserFormComponent } from './subs/auth/user/user-form/user-form.component'
-// import { CustomerManageComponent } from './subs/auth/customer/customer-manage/customer-manage.component'
-// import { ContactManageComponent } from './subs/auth/customer/contact-manage/contact-manage.component'
-// import { ActionManageComponent } from './subs/auth/customer/action-manage/action-manage.component'
-import { CustomerManageModule } from './subs/auth/customer/customer-manage/customer-manage.module'
-import { ActionManageModule } from './subs/auth/customer/action-manage/action-manage.module'
-import { ContactManageModule } from './subs/auth/customer/contact-manage/contact-manage.module'
+import { UserFormComponent } from './subs/auth/user/user-form/user-form.component';
+import { CustomerManageModule } from './subs/auth/customer/customer-manage/customer-manage.module';
+import { ActionManageModule } from './subs/auth/customer/action-manage/action-manage.module';
+import { ContactManageModule } from './subs/auth/customer/contact-manage/contact-manage.module';
+import { EventFollowComponent } from './subs/event/event-management/event-follow/event-follow.component';
 
 import { AlertModule,CarouselModule,DatepickerModule,ButtonsModule,CollapseModule,DropdownModule,RatingModule,TypeaheadModule,PaginationModule,ModalModule,TabsModule,TooltipModule  } from 'ng2-bootstrap';
 import { CalendarModule,PickListModule, TreeModule,TreeNode,AutoCompleteModule} from 'primeng/primeng';
@@ -151,6 +149,9 @@ import { Ng2Echarts } from 'ng2-echarts';
 		InvoiceManagementComponent,
 	
 		SnsPicsManagementComponent,
+
+		EventFollowComponent,
+
 		NumAddCommaPipe,
 		TfPipe,
 		Status3Pipe,

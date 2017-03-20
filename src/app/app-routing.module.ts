@@ -10,7 +10,7 @@ import GLOBAL = require('../../public/in.config');
 		RouterModule.forRoot([
 			{
 				path: '',
-				redirectTo: GLOBAL.INCONFIG.getRoute(),
+				redirectTo: 'homepage',//GLOBAL.INCONFIG.getRoute(),
 				pathMatch: 'full'
 			},
 			{

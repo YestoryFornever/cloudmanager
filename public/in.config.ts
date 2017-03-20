@@ -2,7 +2,7 @@ import { Headers, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 export const INCONFIG = {
 	prod:false,
-	projectName:"emanager",
+	projectName:"cloudmanager",
 	getIP(){
 		return this.prod?"":PRIVATECONFIG.ip;
 	},
@@ -58,10 +58,10 @@ export const INCONFIG = {
 	}
 }
 const PRIVATECONFIG = {
-	ip:"http://11.177.15.104:8080/emanager/",
-	//ip:"http://11.177.50.51:8080/emanager/",//jf
-	//ip:"http://11.177.50.66:8080/emanager/",//zx
-	//ip:"http://11.177.50.73:8080/emanager/",//wjy
-	//ip:"http://11.177.50.64:9999/emanager/",//yh
+	ip:"http://11.177.15.104:8080/cloudmanager/",
+	//ip:"http://11.177.50.51:8080/cloudmanager/",//jf
+	//ip:"http://11.177.50.66:8080/cloudmanager/",//zx
+	//ip:"http://11.177.50.73:8080/cloudmanager/",//wjy
+	//ip:"http://11.177.50.64:9999/cloudmanager/",//yh
 	USERINFO:{}
 }

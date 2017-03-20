@@ -66,6 +66,8 @@ import {InvoiceManagementComponent} from './subs/content/coin/invoice-management
 import { CustomerManageRouting } from './subs/auth/customer/customer-manage/customer-manage-routing.module'
 import { ContactManageRouting } from './subs/auth/customer/contact-manage/contact-manage-routing.moudule'
 import { ActionManageRouting } from './subs/auth/customer/action-manage/action-manage-routing.module'
+
+import { EventFollowComponent } from './subs/event/event-management/event-follow/event-follow.component';
 import { ErrorComponent } from '../error/error.component';
 export const homepageRouting: Routes = [
 	{
@@ -242,7 +244,10 @@ export const homepageRouting: Routes = [
 				path: 'user-management',
 				component: UserManagementComponent
 			},
-
+			{
+				path: 'event-follow',
+				component: EventFollowComponent
+			},
 			...CustomerManageRouting,
 			...ContactManageRouting,
 			...ActionManageRouting,

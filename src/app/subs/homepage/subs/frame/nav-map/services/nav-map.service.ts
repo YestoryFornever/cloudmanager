@@ -27,8 +27,7 @@ export class NavMapService {
 						.catch(this.HandleError);
 	}
 	extractData(){
-		// debugger;
-		let body = [
+		return [
 			{
 				label:"内容管理",
 				level:[
@@ -315,7 +314,21 @@ export class NavMapService {
 					}
 				]
 			},
-		]
-		return body || { };
+			{
+				label:"事务管理",
+				level:[
+					
+					{
+						label:'事件管理',
+						level:[
+							{
+								label:'事件追踪',
+								routerlink:"./event-follow"
+							}
+						]
+					}
+				]
+			}
+		];
 	}
 }

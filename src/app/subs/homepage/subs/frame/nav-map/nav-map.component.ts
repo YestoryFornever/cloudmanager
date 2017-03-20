@@ -21,7 +21,8 @@ export class NavMapComponent implements OnInit {
 	errorMsg:string;
 	navMap:any[];
 	getNavMap(){
-		this.navMapService.getNavMap()
+		this.navMap = this.navMapService.extractData();
+		/*this.navMapService.getNavMap()
 			.subscribe(
 				navmap => {
 					this.navMap = navmap.map(function(item:any,index:any){
@@ -36,7 +37,7 @@ export class NavMapComponent implements OnInit {
 					});
 				},
 				error => this.errorMsg = <any>error
-			);
+			);*/
 	}
 	navTo(target:any){
 		this.router.navigate([target.routerlink],{relativeTo:this.activatedRoute});
