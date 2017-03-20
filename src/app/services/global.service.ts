@@ -8,20 +8,24 @@ export class GlobalService {
 	prod:boolean;
 	projectName:string;
 	JsonHeaders:Headers;
+	FormDataHeaders:Headers;
 	private PRIVATECONFIG:any;
 	constructor (private http: Http) {
 		this.prod = false;
 		this.projectName = "cloudmanager";
 		this.JsonHeaders = new Headers({ 'Content-Type': 'application/json' });
+		this.FormDataHeaders = new Headers({});
 		this.PRIVATECONFIG = {
 			ip:"http://11.177.15.104:8080/cloudmanager/",
 			USERINFO:{}
 		}
 	}
-	post(url:string,obj:Object){
+	post(url:string,obj:Object,isFormData:boolean){
 		url = this.getIP()+url;
 		let body = JSON.stringify(obj);
-		let options = new RequestOptions({ headers: this.JsonHeaders });
+		let options = isFormData?
+			new RequestOptions({ headers: this.JsonHeaders }):
+			new RequestOptions({ headers: this.FormDataHeaders });
 		return this.http
 			.post(url, body, options)
 			.map(this.extractData())
