@@ -206,7 +206,7 @@ export class SnsSourceListComponent implements OnInit{
 		}
 
 		var  fd= new FormData();
-		fd.append('s_id',0);
+		// fd.append('s_id',0);
 	    fd.append('s_name',this.addDetial.s_name);
 		fd.append('s_logo',file_add.files[0]);
 		

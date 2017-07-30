@@ -103,10 +103,11 @@ export class OrganizationListComponent implements OnInit {
 		this.fullnameTypeAhead.source = Observable.create((observer:any) => {
 			this.globalService.post(
 				'back/authority/getOrganizationListByFullName',
-				{'value':this.organization.fullname}
+				{'value':this.organization.fullname},
+				false
 			).subscribe(
-				data => observer.next(data),
-				error => this.errorMsg = error
+				(data:any) => observer.next(data),
+				(error:any) => this.errorMsg = error
 			);
 		}).mergeMap((token:string) => this.fullnameTypeAhead.getStates(token));
 		this.abbrTypeAhead.source = Observable.create((observer:any) => {

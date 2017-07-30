@@ -33,6 +33,7 @@ label.required-item-label:before{
 main{
 	margin:15px;
 	border:1px solid #e1e7eb;
+	background:#273849;
 }
 #user-info,#card-info,#system-info{
 	margin:15px auto;

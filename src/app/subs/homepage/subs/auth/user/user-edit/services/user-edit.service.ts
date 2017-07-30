@@ -44,7 +44,7 @@ export class UserEditService {
 		formdata.append('workAddress',user.work_address);
 		formdata.append('nickName',user.nickname);
 		formdata.append('gender',user.sex);
-		user.birthday && (formdata.append('birthday',(user.birthday).getTime()));
+		// user.birthday && (formdata.append('birthday',(user.birthday).getTime()));
 		formdata.append('hometown',user.home_address);
 		formdata.append('qqId',user.qq_num);
 		formdata.append('weChatId',user.wechat_num);
@@ -78,7 +78,7 @@ export class UserEditService {
 		formdata.append('workAddress',user.work_address);
 		formdata.append('nickName',user.nickname);
 		formdata.append('gender',user.sex);
-		user.birthday && (formdata.append('birthday',(user.birthday).getTime()));
+		// user.birthday && (formdata.append('birthday',(user.birthday).getTime()));
 		formdata.append('hometown',user.home_address);
 		formdata.append('qqId',user.qq_num);
 		formdata.append('weChatId',user.wechat_num);

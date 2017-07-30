@@ -61,6 +61,7 @@ export class UserEditComponent implements OnInit{
 		//console.log('init')
 		this.getOrgs();
 		this.getDeps();
+		alert(1);
 	}
 	/*ngDoCheck(){console.log('docheck')}
 	ngAfterContentInit(){console.log('AfterContentInit')}
